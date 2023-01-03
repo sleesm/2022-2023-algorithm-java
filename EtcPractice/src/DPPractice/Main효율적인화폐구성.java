@@ -6,6 +6,7 @@ import java.util.Scanner;
 /**
  * 다이나믹 프로그래밍
  * 효율적인 화폐구성
+ * 참고 : https://hyena.oopy.io/ce66992c-2164-494a-9c47-ec04885e1be0
  */
 class Main효율적인화폐구성 {
 
@@ -25,7 +26,8 @@ class Main효율적인화폐구성 {
 
 		for (int i = 0; i < n; i++) {
 			for (int j = nums[i]; j <= m; j++) {
-				dp[j] = Math.min(dp[j], dp[j - nums[i]] + 1);
+				if(dp[j - nums[i]] != 10001) /*어차피 바뀌기 때문에 넣어도 안 넣어도 되는 조건이다.*/
+					dp[j] = Math.min(dp[j], dp[j - nums[i]] + 1);
 			}
 		}
 
