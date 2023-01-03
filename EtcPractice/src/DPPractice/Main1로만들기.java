@@ -11,6 +11,7 @@ class Main1로만들기 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int x = sc.nextInt();
+		sc.close();
 		int[] dp = new int[30001];
 		
 		for(int i =2; i<= x; i++) {
@@ -27,5 +28,4 @@ class Main1로만들기 {
 		}
 		System.out.println(dp[x]);
 	}
-
 }
