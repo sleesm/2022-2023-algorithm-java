@@ -25,10 +25,9 @@ class Main10844 {
 			dp[i][9] = dp[i-1][8];
 		}
 
-		System.out.println();
 		long result = 0;
 		for(int i = 0; i<=9; i++) {
-			result = (result + dp[n][i]) % 1000000000;
+			result = (result + dp[n][i]) % MOD;
 		}
 		System.out.println(result);
 	}
