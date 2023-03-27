@@ -14,21 +14,17 @@ class Main숫자카드게임 {
 		int n = sc.nextInt();
 		int m = sc.nextInt();
 		int[][] card = new int[n][m];
-		int[] mins = new int[n];
 
+		int result = 1;
 		for (int i = 0; i < n; i++) {
-			int tmp = 101;
+			int tmp = 10001;
 			for (int j = 0; j < m; j++) {
 				card[i][j] = sc.nextInt();
 				tmp = Math.min(card[i][j], tmp);
 			}
-			mins[i] = tmp;
+			result = Math.max(result, tmp);
 		}
 		sc.close();
-
-		int result = 0;
-		for (int i : mins)
-			result = Math.max(i, result);
 
 		System.out.println(result);
 	}
