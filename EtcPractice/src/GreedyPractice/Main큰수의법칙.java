@@ -1,6 +1,7 @@
 package GreedyPractice;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /***
@@ -10,6 +11,21 @@ import java.util.Scanner;
  */
 class Main큰수의법칙 {
 
+	/**
+	 * change int array to Integer array
+	 * sort list with reverse order
+	 */
+	static int anotherSolution(int n, int m, int k, int[] list) {
+		Integer[] tmp = Arrays.stream(list).boxed().toArray(Integer[]::new);
+		Arrays.sort(tmp, Collections.reverseOrder());
+
+		int first = tmp[0];
+		int second = tmp[1];
+
+		int answer = first * (m - (m / (k + 1))) + second * (m / (k + 1));
+		return answer;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();

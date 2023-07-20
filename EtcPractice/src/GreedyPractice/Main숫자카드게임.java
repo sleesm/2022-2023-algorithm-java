@@ -13,14 +13,12 @@ class Main숫자카드게임 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int m = sc.nextInt();
-		int[][] card = new int[n][m];
 
 		int result = 1;
 		for (int i = 0; i < n; i++) {
 			int tmp = 10001;
 			for (int j = 0; j < m; j++) {
-				card[i][j] = sc.nextInt();
-				tmp = Math.min(card[i][j], tmp);
+				tmp = Math.min(sc.nextInt(), tmp);
 			}
 			result = Math.max(result, tmp);
 		}
