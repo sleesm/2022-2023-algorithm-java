@@ -10,16 +10,15 @@ class Main음료수얼려먹기 {
 
 	private static int[][] map;
 	private static int n, m;
+	private static int[][] dxy = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 	
 	private static boolean dfs(int x, int y) {
 		if(x < 1 || y < 0 || x >= n || y >= m)
 			return false;
 		if(map[x][y] == 0) {
 			map[x][y] = 1;
-			dfs(x-1,y);
-			dfs(x+1,y);
-			dfs(x,y-1);
-			dfs(x,y+1);
+			for(int i = 0; i< 4; i++)
+				dfs(x + dxy[i][0], y + dxy[i][1]); 
 			return true;
 		}
 		return false;
