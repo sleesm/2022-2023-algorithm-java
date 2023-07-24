@@ -19,18 +19,18 @@ class Main떡볶이떡만들기 {
 	}
 
 	private static int binarySearch(int[] list, int x) {
-		int first = 0;
-		int last = Arrays.stream(list).max().getAsInt();
+		int first = 0; // 가장 짧은 길이가 아닌 0부터 시작!!
+		int last = Arrays.stream(list).max().getAsInt(); // 가장 긴 길이
 		int mid;
 
 		int result = 0;
-		while (first <= last) {
+		while (first <= last) {  
 			mid = (first + last) / 2;
-			if (cal(list, mid) > x)
-				first = mid + 1;
-			else {
+			if (x> cal(list, mid))
 				last = mid - 1;
-				result = mid;
+			else {
+				first = mid + 1;
+				result = mid; //Math.max(mid, result);
 			}
 		}
 		return result;
